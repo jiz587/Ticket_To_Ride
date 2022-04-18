@@ -5,6 +5,8 @@
   "projection": {
     "type": "albersUsa"
   },
+  "vconcat":[
+  {
   "layer": [
     {
       "data": {
@@ -149,7 +151,27 @@
     
     
     
+  ]},
+  {
+    "data":{"name":"gamestate"},
+    "transform": [
+    {
+      "aggregate": [{
+       "op": "sum",
+       "field": "points",
+       "as": "sum_points"
+      }],
+      "groupby": ["player"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": { "field": "player", "type": "ordinal" },
+    "y": { "field": "sum_points", "type": "quantitative" },
+    "color":{"field":"player"}
+  }
+}
+  
   ]
-
   
 }
