@@ -5,173 +5,372 @@
   "projection": {
     "type": "albersUsa"
   },
-  "vconcat":[
-  {
-  "layer": [
+  "vconcat": [
     {
-      "data": {
-        "url": "data/us-10m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "states"
+      "layer": [
+        {
+          "data": {
+            "url": "data/us-10m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "lightgray",
+            "stroke": "white"
+          }
+        },
+        {
+          "data": {
+            "name": "map",
+            "values": [
+              {
+                "lon": -97.138451,
+                "lat": 49.895077,
+                "state": "Manitoba",
+                "city": "Winnipeg"
+              },
+
+              {
+                "lon": -112.073844,
+                "lat": 33.448457,
+                "state": "Arizona",
+                "city": "Phoenix"
+              },
+              {
+                "lon": -92.331122,
+                "lat": 34.736009,
+                "state": "Arkansas",
+                "city": "Little Rock"
+              },
+              {
+                "lon": -122.431297,
+                "lat": 37.773972,
+                "state": "California",
+                "city": "San Francisco"
+              },
+              {
+                "lon": -118.243683,
+                "lat": 34.052235,
+                "state": "California",
+                "city": "Los Angeles"
+              },
+              {
+                "lon": -104.984167,
+                "lat": 39.7391667,
+                "state": "Colorado",
+                "city": "Denver"
+              },
+              {
+                "lon": -80.191788,
+                "lat": 25.761681,
+                "state": "Florida",
+                "city": "Miami"
+              },
+              {
+                "lon": -84.39,
+                "lat": 33.76,
+                "state": "Georgia",
+                "city": "Atlanta"
+              },
+
+              {
+                "lon": -87.623177,
+                "lat": 41.881832,
+                "state": "Illinois",
+                "city": "Chicago"
+              },
+
+              {
+                "lon": -77.050636,
+                "lat": 38.889248,
+                "state": "Maryland",
+                "city": "Washington, D.C."
+              },
+              {
+                "lon": -71.0275,
+                "lat": 42.2352,
+                "state": "Massachusetts",
+                "city": "Boston"
+              },
+
+              {
+                "lon": -92.100487,
+                "lat": 46.786671,
+                "state": "Minnesota",
+                "city": "Duluth"
+              },
+              {
+                "lon": -84.349998,
+                "lat": 46.533333,
+                "state": "Michigan",
+                "city": "Sault Ste. Marie"
+              },
+              {
+                "lon": -90.071533,
+                "lat": 29.951065,
+                "state": "Mississippi",
+                "city": "New Orleans"
+              },
+              {
+                "lon": -94.578331,
+                "lat": 39.099724,
+                "state": "Missouri",
+                "city": "Kansas City"
+              },
+              {
+                "lon": -90.199402,
+                "lat": 38.627003,
+                "state": "Missouri",
+                "city": "St. Louis"
+              },
+              {
+                "lon": -112.027031,
+                "lat": 46.595805,
+                "state": "Montana",
+                "city": "Helena"
+              },
+              {
+                "lon": -115.172813,
+                "lat": 36.114647,
+                "state": "Nevada",
+                "city": "Las Vegas"
+              },
+              {
+                "lon": -95.995102,
+                "lat": 41.25716,
+                "state": "Nebraska",
+                "city": "Omaha"
+              },
+
+              {
+                "lon": -105.964575,
+                "lat": 35.667231,
+                "state": "New Mexico",
+                "city": "Santa Fe"
+              },
+              {
+                "lon": -73.935242,
+                "lat": 40.73061,
+                "state": "New York",
+                "city": "New York"
+              },
+              {
+                "lon": -78.638,
+                "lat": 35.771,
+                "state": "North Carolina",
+                "city": "Raleigh"
+              },
+
+              {
+                "lon": -122.676483,
+                "lat": 45.523064,
+                "state": "Oregon",
+                "city": "Portland"
+              },
+              {
+                "lon": -79.995888,
+                "lat": 40.440624,
+                "state": "Pennsylvania",
+                "city": "Pittsburgh"
+              },
+
+              {
+                "lon": -86.784,
+                "lat": 36.165,
+                "state": "Tennessee",
+                "city": "Nashville"
+              },
+              {
+                "lon": -106.460953,
+                "lat": 31.772543,
+                "state": "Texas",
+                "city": "El Paso"
+              },
+              {
+                "lon": -96.808891,
+                "lat": 32.779167,
+                "state": "Texas",
+                "city": "Dallas"
+              },
+              {
+                "lon": -95.358421,
+                "lat": 29.749907,
+                "state": "Texas",
+                "city": "Houston"
+              },
+              {
+                "lon": -111.892622,
+                "lat": 40.7547,
+                "state": "Utah",
+                "city": "Salt Lake City"
+              },
+
+              {
+                "lon": -122.335167,
+                "lat": 47.608013,
+                "state": "Washington",
+                "city": "Seattle"
+              }
+            ]
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "circle",
+                "color": "orange"
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "dy": -10
+              },
+              "encoding": {
+                "text": { "field": "city", "type": "nominal" }
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "name": "gamestate",
+            "values": [
+              {
+                "player": "p1",
+                "ori": "Sault Ste. Marie",
+                "dest": "Duluth",
+                "points": 4,
+                "round": 2
+              },
+              {
+                "player": "p2",
+                "ori": "Denver",
+                "dest": "Omaha",
+                "points": 7,
+                "round": 2
+              },
+              {
+                "player": "p3",
+                "ori": "Las Vegas",
+                "dest": "Salt Lake City",
+                "points": 4,
+                "round": 2
+              },
+              {
+                "player": "p4",
+                "ori": "Los Angeles",
+                "dest": "Phoenix",
+                "points": 4,
+                "round": 2
+              },
+              {
+                "player": "p4",
+                "ori": "Phoenix",
+                "dest": "El Paso",
+                "points": 4,
+                "round": 3
+              },
+              {
+                "player": "p1",
+                "ori": "Duluth",
+                "dest": "Omaha",
+                "points": 2,
+                "round": 4
+              },
+              {
+                "player": "p2",
+                "ori": "New York",
+                "dest": "Washington, D.C.",
+                "points": 2,
+                "round": 4
+              },
+              {
+                "player": "p3",
+                "ori": "Kansas City",
+                "dest": "St. Louis",
+                "points": 2,
+                "round": 4
+              },
+              {
+                "player": "p4",
+                "ori": "Houston",
+                "dest": "New Orleans",
+                "points": 2,
+                "round": 4
+              }
+            ]
+          },
+          "transform": [
+            {
+              "lookup": "ori",
+              "from": {
+                "data": { "name": "map" },
+                "key": "city",
+                "fields": ["lat", "lon"]
+              },
+              "as": ["origin_latitude", "origin_longitude"]
+            },
+            {
+              "lookup": "dest",
+              "from": {
+                "data": { "name": "map" },
+                "key": "city",
+                "fields": ["lat", "lon"]
+              },
+              "as": ["dest_latitude", "dest_longitude"]
+            }
+          ],
+          "projection": { "type": "albersUsa" },
+          "mark": "rule",
+          "encoding": {
+            "longitude": {
+              "field": "origin_longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "origin_latitude",
+              "type": "quantitative"
+            },
+            "longitude2": { "field": "dest_longitude" },
+            "latitude2": { "field": "dest_latitude" },
+            "color": { "field": "player" }
+          }
         }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "lightgray",
-        "stroke": "white"
-      }
+      ]
     },
     {
-      "data": {
-        "name": "map",
-        "values" : [
-    {"lon":-97.138451, "lat":49.895077, "state":"Manitoba", "city":"Winnipeg"},
-
-    {"lon":-112.073844, "lat":33.448457, "state":"Arizona", "city":"Phoenix"},
-    {"lon":-92.331122, "lat":34.736009, "state":"Arkansas", "city":"Little Rock"},
-    {"lon":-122.431297, "lat":37.773972, "state":"California", "city":"San Francisco"},
-    {"lon":-118.243683, "lat":	34.052235, "state":"California", "city":"Los Angeles"},
-    {"lon":-104.984167, "lat":39.7391667, "state":"Colorado", "city":"Denver"},
-    {"lon":-80.191788, "lat":25.761681, "state":"Florida", "city":"Miami"},
-    {"lon":-84.39, "lat":33.76, "state":"Georgia", "city":"Atlanta"},
-
-    {"lon":-87.623177, "lat":41.881832, "state":"Illinois", "city":"Chicago"},
-
-    {"lon":-77.050636, "lat":38.889248, "state":"Maryland", "city":"Washington, D.C."},
-    {"lon":-71.0275, "lat":42.2352, "state":"Massachusetts", "city":"Boston"},
- 
-    {"lon":-92.100487, "lat":46.786671, "state":"Minnesota", "city":"Duluth"},
-    {"lon":-84.349998, "lat":46.533333, "state":"Michigan", "city":"Sault Ste. Marie"},
-    {"lon":-90.071533, "lat":29.951065, "state":"Mississippi", "city":"New Orleans"},
-    {"lon":-94.578331, "lat":39.099724, "state":"Missouri", "city":"Kansas City"},
-    {"lon":-90.199402, "lat":38.627003, "state":"Missouri", "city":"St. Louis"},
-    {"lon":-112.027031, "lat":46.595805, "state":"Montana", "city":"Helena"},
-    {"lon":-115.172813, "lat":36.114647, "state":"Nevada", "city":"Las Vegas"},
-    {"lon":-95.995102, "lat":41.257160, "state":"Nebraska", "city":"Omaha"},
-
-    {"lon":-105.964575, "lat":35.667231, "state":"New Mexico", "city":"Santa Fe"},
-    {"lon":-73.935242, "lat":40.730610, "state":"New York", "city":"New York"},
-    {"lon":-78.638, "lat":35.771, "state":"North Carolina", "city":"Raleigh"},
-
-    {"lon":-122.676483, "lat":45.523064, "state":"Oregon", "city":"Portland"},
-    {"lon":-79.995888, "lat":40.440624, "state":"Pennsylvania", "city":"Pittsburgh"},
-
-    {"lon":-86.784, "lat":36.165, "state":"Tennessee", "city":"Nashville"},
-    {"lon":-106.460953, "lat":31.772543, "state":"Texas", "city":"El Paso"},
-    {"lon":	-96.808891, "lat":32.779167, "state":"Texas", "city":"Dallas"},
-    {"lon":	-95.358421, "lat":29.749907, "state":"Texas", "city":"Houston"},
-    {"lon":-111.892622, "lat":40.7547, "state":"Utah", "city":"Salt Lake City"},
-
-    {"lon":-122.335167, "lat":47.608013, "state":"Washington", "city":"Seattle"}
-
-        ]
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        }
-      },
-      "layer": [{
-        "mark": {
-          "type": "circle",
-          "color": "orange"
-        }
-      }, {
-        "mark": {
-          "type": "text",
-          "dy": -10
-        },
-        "encoding": {
-          "text": {"field": "city", "type": "nominal"}
-        }
-      }]
-    },
-    {
-      "data" : {
-        "name":"gamestate",
-        "values" :[
-         
-
-          {"player":"p1", "ori":"Sault Ste. Marie", "dest":"Duluth", "points":4, "round":2},
-          {"player":"p2", "ori":"Denver", "dest":"Omaha", "points":7, "round":2},
-          {"player":"p3", "ori":"Las Vegas", "dest":"Salt Lake City", "points":4, "round":2},
-          {"player":"p4", "ori":"Los Angeles", "dest":"Phoenix", "points":4, "round":2},
-          {"player":"p4", "ori":"Phoenix", "dest":"El Paso", "points":4, "round":3},
-          {"player":"p1", "ori":"Duluth", "dest":"Omaha", "points":2, "round":4},
-          {"player":"p2", "ori":"New York", "dest":"Washington, D.C.", "points":2, "round":4},
-          {"player":"p3", "ori":"Kansas City", "dest":"St. Louis", "points":2, "round":4},
-          {"player":"p4", "ori":"Houston", "dest":"New Orleans", "points":2, "round":4}
-
-          
-        ]
-      },
+      "data": { "name": "gamestate" },
       "transform": [
         {
-          "lookup": "ori",
-          "from": {
-            "data": {"name": "map"},
-            "key": "city",
-            "fields": ["lat", "lon"]
-          },
-          "as" :["origin_latitude", "origin_longitude"]
-        },
-        {
-          "lookup": "dest",
-          "from": {
-            "data": {"name": "map"},
-            "key": "city",
-            "fields": ["lat", "lon"]
-          },
-          "as" :["dest_latitude", "dest_longitude"]
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "points",
+              "as": "sum_points"
+            }
+          ],
+          "groupby": ["player"]
         }
       ],
-      "projection": {"type": "albersUsa"},
-      "mark": "rule",
+      "mark": "bar",
       "encoding": {
-        "longitude": {
-          "field": "origin_longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "origin_latitude",
-          "type": "quantitative"
-        },
-        "longitude2": {"field": "dest_longitude"},
-        "latitude2": {"field": "dest_latitude"},
-        "color": {"field":"player"}
+        "x": { "field": "player", "type": "ordinal" },
+        "y": { "field": "sum_points", "type": "quantitative" },
+        "color": { "field": "player" }
       }
-      
     }
-    
-    
-    
-  ]},
-  {
-    "data":{"name":"gamestate"},
-    "transform": [
-    {
-      "aggregate": [{
-       "op": "sum",
-       "field": "points",
-       "as": "sum_points"
-      }],
-      "groupby": ["player"]
-    }
-  ],
-  "mark": "bar",
-  "encoding": {
-    "x": { "field": "player", "type": "ordinal" },
-    "y": { "field": "sum_points", "type": "quantitative" },
-    "color":{"field":"player"}
-  }
-}
-  
   ]
-  
 }
