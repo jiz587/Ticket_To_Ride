@@ -90,44 +90,52 @@
     },
     {
       "data" : {
-        "name":"gamestate",
+        "name":"Player1_round1",
         "values" :[
-          {"player":"Player1", "ori":"Dallas", "dest": "Houston", "pts": 3},
-          {"player":"Player1", "ori":"Las Vegas", "dest": "Little Rock", "pts": 7},
-          {"player":"Player2", "ori":"Santa Fe", "dest": "El Paso", "pts": 4},
-          {"player":"Player2", "ori":"Seattle", "dest": "Portland", "pts": 6}
+         
+
+          {"player":"Player1", "ori":"Las Vegas", "dest":"El Paso"},
+
+          {"player":"Player1", "ori":"Little Rock", "dest": "Houston"}
+
+          
         ]
       },
       "transform": [
-        {
-          "filter":{"field": "player", "equal": "Player1"}
-
-        },
         {
           "lookup": "ori",
           "from": {
             "data": {"name": "map"},
             "key": "city",
             "fields": ["lat", "lon"]
-          }
+          },
+          "as" :["origin_latitude", "origin_longitude"]
         },
         {
           "lookup": "dest",
           "from": {
             "data": {"name": "map"},
             "key": "city",
-            "fields": ["lat2", "lon2"]
-          }
+            "fields": ["lat", "lon"]
+          },
+          "as" :["dest_latitude", "dest_longitude"]
         }
       ],
       "projection": {"type": "albersUsa"},
-      "mark": "line",
+      "mark": "rule",
       "encoding": {
-        "color": {"value": "gray"},
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"}
-        
+        "longitude": {
+          "field": "origin_longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "origin_latitude",
+          "type": "quantitative"
+        },
+        "longitude2": {"field": "dest_longitude"},
+        "latitude2": {"field": "dest_latitude"}
       }
+      
     }
     
     
