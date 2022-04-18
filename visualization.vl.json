@@ -24,7 +24,8 @@
       "data": {
         "name": "map",
         "values" : [
-    
+    {"lon":-97.138451, "lat":49.895077, "state":"Manitoba", "city":"Winnipeg"},
+
     {"lon":-112.073844, "lat":33.448457, "state":"Arizona", "city":"Phoenix"},
     {"lon":-92.331122, "lat":34.736009, "state":"Arkansas", "city":"Little Rock"},
     {"lon":-122.431297, "lat":37.773972, "state":"California", "city":"San Francisco"},
@@ -39,11 +40,12 @@
     {"lon":-71.0275, "lat":42.2352, "state":"Massachusetts", "city":"Boston"},
  
     {"lon":-92.100487, "lat":46.786671, "state":"Minnesota", "city":"Duluth"},
+    {"lon":-84.349998, "lat":46.533333, "state":"Michigan", "city":"Sault Ste. Marie"},
     {"lon":-90.071533, "lat":29.951065, "state":"Mississippi", "city":"New Orleans"},
     {"lon":-94.578331, "lat":39.099724, "state":"Missouri", "city":"Kansas City"},
     {"lon":-90.199402, "lat":38.627003, "state":"Missouri", "city":"St. Louis"},
     {"lon":-112.027031, "lat":46.595805, "state":"Montana", "city":"Helena"},
-    {"lon":-96.675345, "lat":36.114647, "state":"Nevada", "city":"Las Vegas"},
+    {"lon":-115.172813, "lat":36.114647, "state":"Nevada", "city":"Las Vegas"},
     {"lon":-95.995102, "lat":41.257160, "state":"Nebraska", "city":"Omaha"},
 
     {"lon":-105.964575, "lat":35.667231, "state":"New Mexico", "city":"Santa Fe"},
@@ -90,13 +92,19 @@
     },
     {
       "data" : {
-        "name":"Player1_round1",
+        "name":"gamestate",
         "values" :[
          
 
-          {"player":"Player1", "ori":"Las Vegas", "dest":"El Paso"},
-
-          {"player":"Player1", "ori":"Little Rock", "dest": "Houston"}
+          {"player":"p1", "ori":"Sault Ste. Marie", "dest":"Duluth", "points":4, "round":2},
+          {"player":"p2", "ori":"Denver", "dest":"Omaha", "points":7, "round":2},
+          {"player":"p3", "ori":"Las Vegas", "dest":"Salt Lake City", "points":4, "round":2},
+          {"player":"p4", "ori":"Los Angeles", "dest":"Phoenix", "points":4, "round":2},
+          {"player":"p4", "ori":"Phoenix", "dest":"El Paso", "points":4, "round":3},
+          {"player":"p1", "ori":"Duluth", "dest":"Omaha", "points":2, "round":4},
+          {"player":"p2", "ori":"New York", "dest":"Washington, D.C.", "points":2, "round":4},
+          {"player":"p3", "ori":"Kansas City", "dest":"St. Louis", "points":2, "round":4},
+          {"player":"p4", "ori":"Houston", "dest":"New Orleans", "points":2, "round":4}
 
           
         ]
@@ -133,7 +141,8 @@
           "type": "quantitative"
         },
         "longitude2": {"field": "dest_longitude"},
-        "latitude2": {"field": "dest_latitude"}
+        "latitude2": {"field": "dest_latitude"},
+        "color": {"field":"player"}
       }
       
     }
