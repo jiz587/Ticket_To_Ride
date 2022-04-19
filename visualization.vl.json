@@ -5,8 +5,13 @@
   "projection": {
     "type": "albersUsa"
   },
-  "vconcat": [
+  "spacing":40,
+  "columns" : 2,
+  "concat": [
+    
     {
+      "width": 800,
+      "height": 500,
       "layer": [
         {
           "data": {
@@ -280,35 +285,35 @@
                 "player": "p4",
                 "ori": "Phoenix",
                 "dest": "El Paso",
-                "points": 4,
+                "points": 8,
                 "round": 3
               },
               {
                 "player": "p1",
                 "ori": "Duluth",
                 "dest": "Omaha",
-                "points": 2,
+                "points": 6,
                 "round": 4
               },
               {
                 "player": "p2",
                 "ori": "New York",
                 "dest": "Washington, D.C.",
-                "points": 2,
+                "points": 9,
                 "round": 4
               },
               {
                 "player": "p3",
                 "ori": "Kansas City",
                 "dest": "St. Louis",
-                "points": 2,
+                "points": 6,
                 "round": 4
               },
               {
                 "player": "p4",
                 "ori": "Houston",
                 "dest": "New Orleans",
-                "points": 2,
+                "points": 10,
                 "round": 4
               }
             ]
@@ -351,15 +356,18 @@
         }
       ]
     },
+    
     {
+      "width": 200,
+      "height": 400,
       "data": { "name": "gamestate" },
       "transform": [
         {
           "aggregate": [
             {
-              "op": "sum",
+              "op": "max",
               "field": "points",
-              "as": "sum_points"
+              "as": "Current_points"
             }
           ],
           "groupby": ["player"]
@@ -368,9 +376,22 @@
       "mark": "bar",
       "encoding": {
         "x": { "field": "player", "type": "ordinal" },
-        "y": { "field": "sum_points", "type": "quantitative" },
+        "y": { "field": "Current_points", "type": "quantitative" },
+        "color": { "field": "player" }
+      }
+    },
+    {
+      "width": 400,
+      "height": 300,
+      "data": { "name": "gamestate" },
+      
+      "mark": "line",
+      "encoding": {
+        "x": { "field": "round", "type": "ordinal" },
+        "y": { "field": "points", "type": "quantitative" },
         "color": { "field": "player" }
       }
     }
+    
   ]
 }
